@@ -12,6 +12,7 @@ public class PlayerScore : MonoBehaviour
         startPosition = transform.position;
         score = _scoreNumber.GetComponent<Text>();
     }
+    // если игрок заходит в коллизию с тегом "препятствие" он получает минус очки, при подборе обьекта с тегом "звезда" получает плюс очки.
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "Obstacle") {
             Score--;
